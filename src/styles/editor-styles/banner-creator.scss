@@ -1,0 +1,34 @@
+.banner-creator-container {
+  font-size: 1.5em;
+  .banner-creator-title {
+    font-size: 1.2em;
+    color: $text-color;
+    padding: 20px;
+    padding-left: 40px;
+    border: 1px solid $lighter-gray;
+  }
+  .banner-creator-content {
+    display: flex;
+    width: 100%;
+
+    .dropdown-wrapper {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+
+      width: 20em;
+      background-color: $lighter-gray;
+
+      .dropdown-title {
+        cursor: pointer;
+        color: $text-color;
+        font-weight: 300;
+        background-color: white;
+        padding: 13px;
+        padding-left: 20px;
+        border: 1px solid $lighter-gray;
+      }
+    }
+  }
+}

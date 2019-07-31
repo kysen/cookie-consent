@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faTimes,
+  faPlus,
+  faMinus,
+  faWindowMaximize,
+  faArrowLeft,
+  faArrowRight,
+  faRedo,
+  faHome,
+  faLock,
+  faEllipsisV
+} from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
+
+import "./styles/main.scss";
+
+import BannerCreator from "./components/banner-creator";
 
 function App() {
+  library.add(
+    faTimes,
+    faPlus,
+    faMinus,
+    faWindowMaximize,
+    faArrowLeft,
+    faArrowRight,
+    faRedo,
+    faHome,
+    faLock,
+    faStar,
+    faEllipsisV
+  );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <BannerCreator />
     </div>
   );
 }

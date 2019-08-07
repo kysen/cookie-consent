@@ -1,0 +1,15 @@
+.banner-creator-container {
+  font-size: 1.5em;
+  .banner-creator-title {
+    font-size: 1.2em;
+    color: $text-color;
+    padding: 20px;
+    padding-left: 40px;
+    border: 1px solid $lighter-gray;
+  }
+
+  .banner-creator-content {
+    display: flex;
+    width: 100%;
+  }
+}

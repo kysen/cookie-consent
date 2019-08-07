@@ -1,0 +1,32 @@
+.dropdown-components {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+
+  width: 20em;
+  background-color: $lighter-gray;
+  .dropdown-wrapper {
+    align-items: center;
+    .dropdown-title {
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      color: $text-color;
+      font-weight: 300;
+      background-color: white;
+      padding: 13px;
+      padding-left: 20px;
+      border: 1px solid $lighter-gray;
+
+      &:hover {
+        color: $text-hover;
+      }
+      &:active {
+        color: $text-on-click;
+      }
+    }
+    .dropdown-title-active {
+      cursor: default;
+      color: $text-hover;
+    }
+  }
+}

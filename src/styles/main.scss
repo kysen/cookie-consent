@@ -2,5 +2,8 @@
 
 @import "./app.scss";
 
-@import "./editor-styles/banner-creator.scss";
-@import "./editor-styles/example-page.scss";
+@import "./component-styles/banner-creator.scss";
+@import "./component-styles/dropdown.scss";
+@import "./component-styles/example-page.scss";
+
+@import "./component-styles/dropdown-styles/layout.scss";

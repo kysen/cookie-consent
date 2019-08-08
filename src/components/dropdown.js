@@ -5,7 +5,7 @@ import Style from "./dropdown-components/style";
 import Content from "./dropdown-components/content";
 import Behavior from "./dropdown-components/behavior";
 
-const Dropdown = () => {
+const Dropdown = props => {
   const [activeComponent, changeActiveComponent] = React.useState("layout");
 
   return (
@@ -13,6 +13,8 @@ const Dropdown = () => {
       <Layout
         activeComponent={activeComponent}
         changeActiveComponent={changeActiveComponent}
+        layoutChosen={props.layoutChosen}
+        handleLayoutClick={props.handleLayoutClick}
       />
       <Style
         activeComponent={activeComponent}

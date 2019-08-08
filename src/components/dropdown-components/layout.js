@@ -8,7 +8,7 @@ import BarStyle from "./layout-bar-style";
 // import rSquareLogo from "../../images/r-square-logo.jpg";
 
 const Layout = props => {
-  // const [layoutChosen, handleLayoutClick] = React.useState("Top");
+  // const [layoutChosen, handleLayoutClick] = React.useState("top");
 
   return (
     <div className="dropdown-wrapper">
@@ -23,21 +23,40 @@ const Layout = props => {
       {props.activeComponent === "layout" ? (
         <div className="layout-options-container">
           <div className="layout-options-wrapper">
-            <div className="layout-item-wrapper">
+            <div
+              className={`layout-item-wrapper ${
+                props.layoutChosen === "top" ? "layout-item-wrapper-active" : ""
+              }`}
+              onClick={() => props.handleLayoutClick("top")}
+            >
               <div className="layout-frame-wrapper">
                 <BarStyle />
                 <LayoutFrame />
               </div>
               <div className={`layout-item-title`}>Top Layout</div>
             </div>
-            <div className="layout-item-wrapper">
+            <div
+              className={`layout-item-wrapper ${
+                props.layoutChosen === "bottom"
+                  ? "layout-item-wrapper-active"
+                  : ""
+              }`}
+              onClick={() => props.handleLayoutClick("bottom")}
+            >
               <div className="layout-frame-wrapper">
                 <LayoutFrame />
                 <BarStyle />
               </div>{" "}
               <div className={`layout-item-title`}>{"Bottom Layout"}</div>
             </div>
-            <div className="layout-item-wrapper">
+            <div
+              className={`layout-item-wrapper ${
+                props.layoutChosen === "side"
+                  ? "layout-item-wrapper-active"
+                  : ""
+              }`}
+              onClick={() => props.handleLayoutClick("side")}
+            >
               <div className="layout-frame-wrapper">
                 <div className="side-popup-container">
                   <div className="side-popup-wrapper">
@@ -54,9 +73,16 @@ const Layout = props => {
                 </div>
                 <LayoutFrame />
               </div>{" "}
-              <div className={`layout-item-title`}>{"Side Pop-up"}</div>
+              <div className="layout-item-title">{"Side Pop-up"}</div>
             </div>
-            <div className="layout-item-wrapper">
+            <div
+              className={`layout-item-wrapper ${
+                props.layoutChosen === "alert"
+                  ? "layout-item-wrapper-active"
+                  : ""
+              }`}
+              onClick={() => props.handleLayoutClick("alert")}
+            >
               <div className="layout-frame-wrapper">
                 <div className="alert-style-container">
                   <div className="alert-wrapper">

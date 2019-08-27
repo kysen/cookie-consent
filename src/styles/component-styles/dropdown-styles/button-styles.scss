@@ -1,0 +1,14 @@
+.button-styles-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  .button-style-wrapper {
+    width: 100%;
+    .button-style-title {
+      font-size: 0.8em;
+      color: $text-color;
+      font-weight: 500;
+    }
+  }
+}

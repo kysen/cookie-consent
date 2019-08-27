@@ -2,8 +2,10 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  transition: height 1s ease-in-out;
 
   .layout-options-wrapper {
+    transition: height 500ms ease-in-out;
     width: 100%;
     margin: 20px;
     display: grid;
@@ -19,7 +21,7 @@
       border: 2px solid $light-gray;
       background-color: white;
 
-      transition: 0.3s ease-in-out;
+      // transition: 0.3s ease-in-out;
 
       &:hover {
         border-color: $text-hover;

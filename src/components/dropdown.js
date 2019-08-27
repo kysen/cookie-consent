@@ -1,12 +1,13 @@
 import React from "react";
 
 import Layout from "./dropdown-components/layout";
-import Style from "./dropdown-components/style";
+import BannerColors from "./dropdown-components/banner-colors";
+import ButtonStyle from "./dropdown-components/button-style";
 import Content from "./dropdown-components/content";
 import Behavior from "./dropdown-components/behavior";
 
 const Dropdown = props => {
-  const [activeComponent, changeActiveComponent] = React.useState("layout");
+  const [activeComponent, changeActiveComponent] = React.useState("button");
 
   return (
     <div className="dropdown-components">
@@ -16,7 +17,11 @@ const Dropdown = props => {
         layoutChosen={props.layoutChosen}
         handleLayoutClick={props.handleLayoutClick}
       />
-      <Style
+      <BannerColors
+        activeComponent={activeComponent}
+        changeActiveComponent={changeActiveComponent}
+      />
+      <ButtonStyle
         activeComponent={activeComponent}
         changeActiveComponent={changeActiveComponent}
       />

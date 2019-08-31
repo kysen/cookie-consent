@@ -9,7 +9,6 @@ const ColorInputWrapper = props => {
 
   return (
     <div className="color-input-wrapper">
-      <div>{props.title}</div>
       <div className="color-input-field">
         <input
           type="text"

@@ -1,13 +1,18 @@
 import React from "react";
 
 const Behavior = props => {
+  const componentClick = () => {
+    props.activeComponent === "behavior"
+      ? props.changeActiveComponent("")
+      : props.changeActiveComponent("behavior");
+  };
   return (
     <div className="dropdown-wrapper">
       <div
         className={`dropdown-title ${
           props.activeComponent === "behavior" ? "dropdown-title-active" : ""
         }`}
-        onClick={() => props.changeActiveComponent("behavior")}
+        onClick={() => componentClick()}
       >
         Behavior
       </div>

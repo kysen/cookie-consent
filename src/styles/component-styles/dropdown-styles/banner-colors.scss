@@ -8,48 +8,6 @@
       color: $text-color;
       font-weight: 500;
     }
-    .color-input-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      height: 1.5em;
-      border: 2px solid $gray;
-      background-color: white;
-      margin: 10px 0px;
-
-      padding: 0px 10px;
-
-      .color-input-field {
-        color: $text-color;
-        input {
-          border: none;
-          font-size: 1em;
-          color: $text-color;
-          outline: none;
-        }
-      }
-      &:hover {
-        .color-changer {
-          border: 2px solid $text-hover;
-        }
-      }
-
-      .color-changer {
-        height: 28px;
-        width: 28px;
-        border-radius: 5px;
-        margin-right: 10px;
-        border: 2px solid $light-gray;
-
-        position: absolute;
-        align-self: flex-end;
-        padding: 0px;
-        span {
-          border-radius: 3px;
-        }
-      }
-    }
 
     .shadow-options-wrapper {
       color: $text-color;
@@ -112,25 +70,67 @@
       }
     }
   }
-}
-.draggable-wrapper {
-  cursor: grab;
-  &:hover {
+
+  .draggable-wrapper {
+    cursor: grab;
+    &:hover {
+      .draggable-circle {
+        border: 2px solid $text-hover;
+      }
+    }
+
     .draggable-circle {
+      height: 13px;
+      width: 13px;
+      background-color: white;
+      border: 2px solid $gray;
+      border-radius: 10px;
+
+      &:active {
+        cursor: grabbing;
+        border: 2px solid $text-on-click;
+      }
+    }
+  }
+}
+.color-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 1.5em;
+  border: 2px solid $gray;
+  background-color: white;
+  margin: 10px 0px;
+
+  padding: 0px 10px;
+
+  .color-input-field {
+    color: $text-color;
+    input {
+      border: none;
+      font-size: 1em;
+      color: $text-color;
+      outline: none;
+    }
+  }
+  &:hover {
+    .color-changer {
       border: 2px solid $text-hover;
     }
   }
+  .color-changer {
+    height: 28px;
+    width: 28px;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: 2px solid $light-gray;
 
-  .draggable-circle {
-    height: 13px;
-    width: 13px;
-    background-color: white;
-    border: 2px solid $gray;
-    border-radius: 10px;
-
-    &:active {
-      cursor: grabbing;
-      border: 2px solid $text-on-click;
+    position: absolute;
+    align-self: flex-end;
+    padding: 0px;
+    span {
+      border-radius: 3px;
     }
   }
 }

@@ -14,13 +14,19 @@ const Style = props => {
   const [infoTextColor, setInfoTextColor] = useState({});
   const [infoButtonColor, setInfoButtonColor] = useState({});
   const [infoBorderColor, setInfoBorderColor] = useState({});
+
+  const componentClick = () => {
+    props.activeComponent === "button"
+      ? props.changeActiveComponent("")
+      : props.changeActiveComponent("button");
+  };
   return (
     <div className="dropdown-wrapper">
       <div
         className={`dropdown-title ${
           props.activeComponent === "button" ? "dropdown-title-active" : ""
         }`}
-        onClick={() => props.changeActiveComponent("button")}
+        onClick={() => componentClick()}
       >
         Button Style
       </div>

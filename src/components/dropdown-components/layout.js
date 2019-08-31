@@ -5,10 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LayoutFrame from "./layout-components/layout-frame";
 import BarStyle from "./layout-components/layout-bar-style";
 
-// import rSquareLogo from "../../images/r-square-logo.jpg";
-
 const Layout = props => {
-  // const [layoutChosen, handleLayoutClick] = React.useState("top");
+  const componentClick = () => {
+    props.activeComponent === "layout"
+      ? props.changeActiveComponent("")
+      : props.changeActiveComponent("layout");
+  };
 
   return (
     <div className="dropdown-wrapper">
@@ -16,7 +18,7 @@ const Layout = props => {
         className={`dropdown-title ${
           props.activeComponent === "layout" ? "dropdown-title-active" : ""
         }`}
-        onClick={() => props.changeActiveComponent("layout")}
+        onClick={() => componentClick()}
       >
         Layout
       </div>

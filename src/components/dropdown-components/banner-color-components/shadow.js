@@ -3,24 +3,17 @@ import React from "react";
 import Draggable from "react-draggable";
 
 const Shadow = props => {
-  // const [shadowVerticlePosition, setShadowVerticlePostition] = React.useState(
-  //   0
-  // );
-  // const [
-  //   shadowHorizontalPosition,
-  //   setShadowHorizontalPostition
-  // ] = React.useState(0);
-
   const horizontalDragHandler = (e, ui) => {
-    let movement = ui.deltaX / 5;
-    props.setShadowVerticlePostition(props.shadowVerticlePosition + movement);
+    let movement = ui.deltaX;
+    props.setShadowHorizontal(props.shadowHorizontal + movement);
   };
   const verticleDragHandler = (e, ui) => {
-    let movement = ui.deltaY / 5;
-    props.setShadowHorizontalPostition(
-      props.shadowHorizontalPosition + movement
-    );
+    let movement = ui.deltaY;
+    props.setShadowVerticle(props.shadowVerticle + movement);
   };
+
+  console.log(props.shadowHorizontal);
+  console.log(props.shadowVerticle);
 
   return (
     <div className="banner-color-component">
@@ -30,6 +23,7 @@ const Shadow = props => {
           <div className="shadow-option-title">Position</div>
           <div className="horizontal-draggable-wrapper draggable-wrapper">
             <Draggable
+              defaultPosition={{ x: props.shadowHorizontal, y: 0 }}
               bounds={{ left: -40, right: 40 }}
               axis="x"
               grid={[5, 5]}
@@ -42,6 +36,7 @@ const Shadow = props => {
           </div>
           <div className="verticle-draggable-wrapper draggable-wrapper">
             <Draggable
+              defaultPosition={{ x: 0, y: props.shadowVerticle }}
               bounds={{ top: -40, bottom: 40 }}
               axis="y"
               grid={[5, 5]}
@@ -59,7 +54,7 @@ const Shadow = props => {
           <select
             name="blur"
             value={props.shadowBlurChosen}
-            onChange={event => props.handleBlurSelection(event.target.value)}
+            onChange={event => props.setShadowBlur(event.target.value)}
             className="shadow-option-select"
           >
             <option value="low">low</option>
@@ -73,7 +68,7 @@ const Shadow = props => {
           <select
             name="size"
             value={props.shadowSizeChosen}
-            onChange={event => props.handleSizeSelection(event.target.value)}
+            onChange={event => props.setShadowSize(event.target.value)}
             className="shadow-option-select"
           >
             <option value="small">small</option>

@@ -4,11 +4,11 @@ import InputColor from "react-input-color";
 
 const BackgroundTextColor = props => {
   const [initial, setInitial] = useState(props.initial);
-  // const [color, setColor] = useState({});
+
+  const [prac, setPrac] = useState("");
+  console.log(prac);
 
   let color = props.color;
-
-  console.log(color.hex);
 
   return (
     <div className="banner-color-component">
@@ -21,12 +21,18 @@ const BackgroundTextColor = props => {
             onChange={e => setInitial(e.target.value)}
           />
         </div>
-        <InputColor
+        <input
+          type="color"
+          className="color-changer"
+          value={prac}
+          onChange={e => setPrac(e.target.value)}
+        />
+        {/* <InputColor
           className="color-changer"
           onChange={props.setColor}
           initialHexColor={initial}
           placement="right"
-        />
+        /> */}
       </div>
     </div>
   );

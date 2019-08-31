@@ -4,25 +4,11 @@ import BackgroundTextColor from "./banner-color-components/background-text-color
 import Shadow from "./banner-color-components/shadow";
 
 const BannerColors = props => {
-  const [backgroundColorChosen, handleBackgroundColorChange] = React.useState(
-    {}
-  );
-  const [bannerTextColorChosen, handleBannerTextColorChange] = React.useState(
-    {}
-  );
-
-  const [shadowVerticlePosition, setShadowVerticlePostition] = React.useState(
-    0
-  );
-  const [
-    shadowHorizontalPosition,
-    setShadowHorizontalPostition
-  ] = React.useState(0);
-
-  const [shadowBlurChosen, handleBlurSelection] = React.useState("medium");
-  const [shadowSizeChosen, handleSizeSelection] = React.useState(
-    "match banner"
-  );
+  const componentClick = () => {
+    props.activeComponent === "colors"
+      ? props.changeActiveComponent("")
+      : props.changeActiveComponent("colors");
+  };
 
   return (
     <div className="dropdown-wrapper">
@@ -30,7 +16,7 @@ const BannerColors = props => {
         className={`dropdown-title ${
           props.activeComponent === "colors" ? "dropdown-title-active" : ""
         }`}
-        onClick={() => props.changeActiveComponent("colors")}
+        onClick={() => componentClick()}
       >
         Banner Colors
       </div>
@@ -38,25 +24,25 @@ const BannerColors = props => {
         <div className="banner-colors-content">
           <BackgroundTextColor
             title="Background"
-            color={backgroundColorChosen}
-            setColor={handleBackgroundColorChange}
-            initial="#FFFFFF"
+            color={props.bannerBackground}
+            setColor={props.setBannerBackground}
+            initial="#3F359E"
           />
           <BackgroundTextColor
             title="Text"
-            color={bannerTextColorChosen}
-            setColor={handleBannerTextColorChange}
-            initial="#BBBBBB"
+            color={props.bannerTextColor}
+            setColor={props.setBannerTextColor}
+            initial="#FFFFFF"
           />
           <Shadow
-            shadowVerticlePosition={shadowVerticlePosition}
-            setShadowVerticlePostition={setShadowVerticlePostition}
-            shadowHorizontalPosition={shadowHorizontalPosition}
-            setShadowHorizontalPostition={setShadowHorizontalPostition}
-            shadowBlurChosen={shadowBlurChosen}
-            handleBlurSelection={handleBlurSelection}
-            shadowSizeChosen={shadowSizeChosen}
-            handleSizeSelection={handleSizeSelection}
+            shadowVerticle={props.shadowVerticle}
+            setShadowVerticle={props.setShadowVerticle}
+            shadowHorizontal={props.shadowHorizontal}
+            setShadowHorizontal={props.setShadowHorizontal}
+            shadowBlurChosen={props.shadowBlurChosen}
+            setShadowBlur={props.setShadowBlur}
+            shadowSizeChosen={props.shadowSizeChosen}
+            setShadowSize={props.setShadowSize}
           />
         </div>
       ) : (

@@ -7,7 +7,7 @@ import Content from "./dropdown-components/content";
 import Behavior from "./dropdown-components/behavior";
 
 const Dropdown = props => {
-  const [activeComponent, changeActiveComponent] = React.useState("button");
+  const [activeComponent, changeActiveComponent] = React.useState("colors");
 
   return (
     <div className="dropdown-components">
@@ -20,6 +20,18 @@ const Dropdown = props => {
       <BannerColors
         activeComponent={activeComponent}
         changeActiveComponent={changeActiveComponent}
+        bannerBackground={props.bannerBackground}
+        setBannerBackground={props.setBannerBackground}
+        bannerTextColor={props.bannerTextColor}
+        setBannerTextColor={props.setBannerTextColor}
+        shadowVerticle={props.shadowVerticle}
+        setShadowVerticle={props.setShadowVerticle}
+        shadowHorizontal={props.shadowHorizontal}
+        setShadowHorizontal={props.setShadowHorizontal}
+        shadowBlurChosen={props.shadowBlurChosen}
+        setShadowBlur={props.setShadowBlur}
+        shadowSizeChosen={props.shadowSizeChosen}
+        setShadowSize={props.setShadowSize}
       />
       <ButtonStyle
         activeComponent={activeComponent}

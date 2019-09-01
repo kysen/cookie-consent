@@ -1,20 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 import ButtonColorChanger from "./button-styles-components/button-color-changer";
 
 const Style = props => {
-  const [acceptTextColor, setAcceptTextColor] = useState({});
-  const [acceptButtonColor, setAcceptButtonColor] = useState({});
-  const [acceptBorderColor, setAcceptBorderColor] = useState({});
-
-  const [declineTextColor, setDeclineTextColor] = useState({});
-  const [declineButtonColor, setDeclineButtonColor] = useState({});
-  const [declineBorderColor, setDeclineBorderColor] = useState({});
-
-  const [infoTextColor, setInfoTextColor] = useState({});
-  const [infoButtonColor, setInfoButtonColor] = useState({});
-  const [infoBorderColor, setInfoBorderColor] = useState({});
-
   const componentClick = () => {
     props.activeComponent === "button"
       ? props.changeActiveComponent("")
@@ -35,38 +23,38 @@ const Style = props => {
           <ButtonColorChanger
             title="Accept Button"
             textInitial="#3f359E"
-            textColor={acceptTextColor}
-            setTextColor={setAcceptTextColor}
+            textColor={props.acceptTextColor}
+            setTextColor={props.setAcceptTextColor}
             buttonInitial="#FFFFFF"
-            buttonColor={acceptButtonColor}
-            setButtonColor={setAcceptButtonColor}
+            buttonColor={props.acceptButtonColor}
+            setButtonColor={props.setAcceptButtonColor}
             borderInitial="#FFFFFF"
-            borderColor={acceptBorderColor}
-            setBorderColor={setAcceptBorderColor}
+            borderColor={props.acceptBorderColor}
+            setBorderColor={props.setAcceptBorderColor}
           />
           <ButtonColorChanger
             title="Decline Button"
             textInitial="#FFFFFF"
-            textColor={declineTextColor}
-            setTextColor={setDeclineTextColor}
+            textColor={props.declineTextColor}
+            setTextColor={props.setDeclineTextColor}
             buttonInitial="#8F2626"
-            buttonColor={declineButtonColor}
-            setButtonColor={setDeclineButtonColor}
+            buttonColor={props.declineButtonColor}
+            setButtonColor={props.setDeclineButtonColor}
             borderInitial="#FFFFFF"
-            borderColor={declineBorderColor}
-            setBorderColor={setDeclineBorderColor}
+            borderColor={props.declineBorderColor}
+            setBorderColor={props.setDeclineBorderColor}
           />
           <ButtonColorChanger
             title="Info Button"
             textInitial="#3f359E"
-            textColor={infoTextColor}
-            setTextColor={setInfoTextColor}
+            textColor={props.infoTextColor}
+            setTextColor={props.setInfoTextColor}
             buttonInitial="#FFFFFF"
-            buttonColor={infoButtonColor}
-            setButtonColor={setInfoButtonColor}
+            buttonColor={props.infoButtonColor}
+            setButtonColor={props.setInfoButtonColor}
             borderInitial="#FFFFFF"
-            borderColor={infoBorderColor}
-            setBorderColor={setInfoBorderColor}
+            borderColor={props.infoBorderColor}
+            setBorderColor={props.setInfoBorderColor}
           />
         </div>
       ) : (

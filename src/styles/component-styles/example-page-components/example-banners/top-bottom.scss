@@ -1,4 +1,35 @@
 .top-bottom-container {
   margin: 0px -30px;
-  width: calc(100% + 60px);
+  width: inherit;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
+  position: -webkit-sticky;
+  position: sticky;
+
+  .banner-content {
+    flex-shrink: 1;
+  }
+
+  .banner-right-side {
+    display: flex;
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.8em;
+      margin: 0px 5px;
+      border: 1px solid;
+      outline: none;
+      border-radius: 5px;
+      padding: 0px 15px;
+
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        filter: brightness(90%);
+      }
+    }
+  }
 }

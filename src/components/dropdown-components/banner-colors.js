@@ -26,24 +26,27 @@ const BannerColors = props => {
             title="Background"
             color={props.bannerBackground}
             setColor={props.setBannerBackground}
-            initial="#3F359E"
           />
           <BackgroundTextColor
             title="Text"
             color={props.bannerTextColor}
             setColor={props.setBannerTextColor}
-            initial="#FFFFFF"
           />
-          <Shadow
-            shadowVerticle={props.shadowVerticle}
-            setShadowVerticle={props.setShadowVerticle}
-            shadowHorizontal={props.shadowHorizontal}
-            setShadowHorizontal={props.setShadowHorizontal}
-            shadowBlurChosen={props.shadowBlurChosen}
-            setShadowBlur={props.setShadowBlur}
-            shadowSizeChosen={props.shadowSizeChosen}
-            setShadowSize={props.setShadowSize}
-          />
+
+          {props.layoutChosen !== "top" && props.layoutChosen !== "bottom" ? (
+            <Shadow
+              shadowVerticle={props.shadowVerticle}
+              setShadowVerticle={props.setShadowVerticle}
+              shadowHorizontal={props.shadowHorizontal}
+              setShadowHorizontal={props.setShadowHorizontal}
+              shadowBlurChosen={props.shadowBlurChosen}
+              setShadowBlur={props.setShadowBlur}
+              shadowSizeChosen={props.shadowSizeChosen}
+              setShadowSize={props.setShadowSize}
+            />
+          ) : (
+            ""
+          )}
         </div>
       ) : (
         ""

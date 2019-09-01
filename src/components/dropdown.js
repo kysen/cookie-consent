@@ -7,7 +7,7 @@ import Content from "./dropdown-components/content";
 import Behavior from "./dropdown-components/behavior";
 
 const Dropdown = props => {
-  const [activeComponent, changeActiveComponent] = React.useState("colors");
+  const [activeComponent, changeActiveComponent] = React.useState("button");
 
   return (
     <div className="dropdown-components">
@@ -18,24 +18,47 @@ const Dropdown = props => {
         handleLayoutClick={props.handleLayoutClick}
       />
       <BannerColors
+        layoutChosen={props.layoutChosen}
         activeComponent={activeComponent}
         changeActiveComponent={changeActiveComponent}
+        //banner-colors hooks pt 1
         bannerBackground={props.bannerBackground}
-        setBannerBackground={props.setBannerBackground}
         bannerTextColor={props.bannerTextColor}
-        setBannerTextColor={props.setBannerTextColor}
         shadowVerticle={props.shadowVerticle}
-        setShadowVerticle={props.setShadowVerticle}
         shadowHorizontal={props.shadowHorizontal}
-        setShadowHorizontal={props.setShadowHorizontal}
         shadowBlurChosen={props.shadowBlurChosen}
-        setShadowBlur={props.setShadowBlur}
         shadowSizeChosen={props.shadowSizeChosen}
+        //banner-colors hooks pt 2
+        setBannerBackground={props.setBannerBackground}
+        setBannerTextColor={props.setBannerTextColor}
+        setShadowVerticle={props.setShadowVerticle}
+        setShadowHorizontal={props.setShadowHorizontal}
+        setShadowBlur={props.setShadowBlur}
         setShadowSize={props.setShadowSize}
       />
       <ButtonStyle
         activeComponent={activeComponent}
         changeActiveComponent={changeActiveComponent}
+        //button-style hooks pt 1
+        acceptTextColor={props.acceptTextColor}
+        acceptButtonColor={props.acceptButtonColor}
+        acceptBorderColor={props.acceptBorderColor}
+        declineTextColor={props.declineTextColor}
+        declineButtonColor={props.declineButtonColor}
+        declineBorderColor={props.declineBorderColor}
+        infoTextColor={props.infoTextColor}
+        infoButtonColor={props.infoButtonColor}
+        infoBorderColor={props.infoBorderColor}
+        //button-style hooks pt 2
+        setAcceptTextColor={props.setAcceptTextColor}
+        setAcceptButtonColor={props.setAcceptButtonColor}
+        setAcceptBorderColor={props.setAcceptBorderColor}
+        setDeclineTextColor={props.setDeclineTextColor}
+        setDeclineButtonColor={props.setDeclineButtonColor}
+        setDeclineBorderColor={props.setDeclineBorderColor}
+        setInfoTextColor={props.setInfoTextColor}
+        setInfoButtonColor={props.setInfoButtonColor}
+        setInfoBorderColor={props.setInfoBorderColor}
       />
       <Content
         activeComponent={activeComponent}

@@ -1,14 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import InputColor from "react-input-color";
 
 const BackgroundTextColor = props => {
-  const [initial, setInitial] = useState(props.initial);
-
-  const [prac, setPrac] = useState("");
-  console.log(prac);
-
-  let color = props.color;
+  let color = `${props.color.hex}`;
 
   return (
     <div className="banner-color-component">
@@ -17,22 +12,16 @@ const BackgroundTextColor = props => {
         <div className="color-input-field">
           <input
             type="text"
-            value={color.hex}
-            onChange={e => setInitial(e.target.value)}
+            value={props.color.hex}
+            onChange={e => props.setColor({ hex: e.target.value })}
           />
         </div>
-        <input
-          type="color"
-          className="color-changer"
-          value={prac}
-          onChange={e => setPrac(e.target.value)}
-        />
-        {/* <InputColor
+        <InputColor
           className="color-changer"
           onChange={props.setColor}
-          initialHexColor={initial}
+          initialHexColor={color}
           placement="right"
-        /> */}
+        />
       </div>
     </div>
   );

@@ -12,9 +12,6 @@ const Shadow = props => {
     props.setShadowVerticle(props.shadowVerticle + movement);
   };
 
-  console.log(props.shadowHorizontal);
-  console.log(props.shadowVerticle);
-
   return (
     <div className="banner-color-component">
       <div className="banner-color-title">Shadow</div>

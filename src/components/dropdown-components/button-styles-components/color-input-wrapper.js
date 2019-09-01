@@ -1,25 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 
 import InputColor from "react-input-color";
+// import { cpus } from "os";
 
 const ColorInputWrapper = props => {
-  const [initial, setInitial] = useState(props.initial);
-
-  let color = props.color;
+  let color = props.color.hex;
 
   return (
     <div className="color-input-wrapper">
       <div className="color-input-field">
         <input
           type="text"
-          value={color.hex}
-          onChange={e => setInitial(e.target.value)}
+          value={props.color.hex}
+          onChange={e => props.setColor({ hex: e.target.value })}
         />
       </div>
       <InputColor
         className="color-changer"
         onChange={props.setColor}
-        initialHexColor={initial}
+        initialHexColor={color}
         placement="right"
       />
     </div>

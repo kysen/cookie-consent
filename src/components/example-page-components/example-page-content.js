@@ -3,15 +3,40 @@ import React from "react";
 import TopBottom from "./example-banners/example-top-bottom";
 
 const ExamplePageContent = props => {
+  const [blurRadius, setBlurRadius] = React.useState("20px");
+  const [shadowSpread, setShadowSpread] = React.useState("20px");
+
+  React.useEffect(() => {
+    if (props.shadowBlurChosen === "low") {
+      setBlurRadius("10px");
+    } else if (props.shadowBlurChosen === "high") {
+      setBlurRadius("30px");
+    } else {
+      setBlurRadius("20px");
+    }
+  }, [props.shadowBlurChosen]);
+
+  React.useEffect(() => {
+    if (props.shadowSizeChosen === "small") {
+      setShadowSpread("-15px");
+    } else if (props.shadowSizeChosen === "large") {
+      setShadowSpread("15px");
+    } else {
+      setShadowSpread("0px");
+    }
+  }, [props.shadowSizeChosen]);
+
   const bannerTop = {
     backgroundColor: props.bannerBackground,
     color: props.bannerTextColor,
-    top: 0
+    top: 0,
+    boxShadow: `${props.shadowHorizontal}px ${props.shadowVerticle}px ${blurRadius} ${shadowSpread} black`
   };
   const bannerBottom = {
     backgroundColor: props.bannerBackground,
     color: props.bannerTextColor,
-    bottom: 0
+    bottom: 0,
+    boxShadow: `${props.shadowHorizontal}px ${props.shadowVerticle}px ${blurRadius} black`
   };
   const styles = {
     acceptButton: {
@@ -30,28 +55,29 @@ const ExamplePageContent = props => {
       borderColor: props.infoBorderColor
     }
   };
-  // acceptTextColor={props.acceptTextColor}
-  // acceptButtonColor={props.acceptButtonColor}
-  // acceptBorderColor={props.acceptBorderColor}
-  // declineTextColor={props.declineTextColor}
-  // declineButtonColor={props.declineButtonColor}
-  // declineBorderColor={props.declineBorderColor}
-  // infoTextColor={props.infoTextColor}
-  // infoButtonColor={props.infoButtonColor}
-  // infoBorderColor={props.infoBorderColor}
+
+  console.log(props.shadowHorizontal);
 
   return (
     <div className="example-page-content-container">
       {props.layoutChosen === "top" ? (
         <TopBottom
+          styleTopOrBottom={bannerTop}
+          styles={styles}
+          //banner-colors hooks
           bannerBackground={props.bannerBackground}
           bannerTextColor={props.bannerTextColor}
           shadowVerticle={props.shadowVerticle}
           shadowHorizontal={props.shadowHorizontal}
-          shadowBlurChosen={props.shadowBlurChosen}
-          shadowSizeChosen={props.shadowSizeChosen}
-          styleTopOrBottom={bannerTop}
-          styles={styles}
+          // button-style hooks
+          includeAccept={props.includeAccept}
+          includeDecline={props.includeDecline}
+          includeInfo={props.includeInfo}
+          //content hooks
+          content={props.content}
+          acceptContent={props.acceptContent}
+          declineContent={props.declineContent}
+          infoContent={props.infoContent}
         />
       ) : (
         ""
@@ -68,14 +94,22 @@ const ExamplePageContent = props => {
       </div>
       {props.layoutChosen === "bottom" ? (
         <TopBottom
+          styleTopOrBottom={bannerBottom}
+          styles={styles}
+          //banner-colors hooks
           bannerBackground={props.bannerBackground}
           bannerTextColor={props.bannerTextColor}
           shadowVerticle={props.shadowVerticle}
           shadowHorizontal={props.shadowHorizontal}
-          shadowBlurChosen={props.shadowBlurChosen}
-          shadowSizeChosen={props.shadowSizeChosen}
-          styleTopOrBottom={bannerBottom}
-          styles={styles}
+          // button-style hooks
+          includeAccept={props.includeAccept}
+          includeDecline={props.includeDecline}
+          includeInfo={props.includeInfo}
+          //content hooks
+          content={props.content}
+          acceptContent={props.acceptContent}
+          declineContent={props.declineContent}
+          infoContent={props.infoContent}
         />
       ) : (
         ""

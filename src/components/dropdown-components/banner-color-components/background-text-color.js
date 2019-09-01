@@ -7,10 +7,12 @@ const BackgroundTextColor = props => {
 
   return (
     <div className="banner-color-component">
-      <div className="banner-color-title">{props.title}</div>
+      <div className="banner-color-title ">{props.title}</div>
       <div className="color-input-wrapper">
         <div className="color-input-field">
           <input
+            maxLength="9"
+            spellCheck="false"
             type="text"
             value={props.color.hex}
             onChange={e => props.setColor({ hex: e.target.value })}

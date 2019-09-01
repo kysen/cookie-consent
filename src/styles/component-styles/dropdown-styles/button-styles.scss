@@ -13,15 +13,32 @@
       color: $text-color;
       font-weight: 500;
       margin-bottom: 5px;
+
+      display: flex;
+
+      .button-include {
+        margin-left: 15px;
+        font-style: italic;
+
+        input {
+          cursor: pointer;
+        }
+      }
     }
 
-    .sub-title {
-      margin-left: 20px;
-      font-size: 0.9em;
-      color: $text-color;
-    }
-    .color-input-wrapper {
-      margin-left: 20px;
+    .button-style-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .button-style-item {
+        .sub-title {
+          margin-left: 20px;
+          font-size: 0.9em;
+          color: $text-color;
+        }
+        .color-input-wrapper {
+          margin-left: 20px;
+        }
+      }
     }
   }
 }

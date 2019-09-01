@@ -10,6 +10,8 @@ const ColorInputWrapper = props => {
     <div className="color-input-wrapper">
       <div className="color-input-field">
         <input
+          maxLength="9"
+          spellCheck="false"
           type="text"
           value={props.color.hex}
           onChange={e => props.setColor({ hex: e.target.value })}

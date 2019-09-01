@@ -21,38 +21,35 @@ const Style = props => {
       {props.activeComponent === "button" ? (
         <div className="button-styles-content">
           <ButtonColorChanger
+            include={props.includeAccept}
+            setInclude={props.setIncludeAccept}
             title="Accept Button"
-            textInitial="#3f359E"
             textColor={props.acceptTextColor}
             setTextColor={props.setAcceptTextColor}
-            buttonInitial="#FFFFFF"
             buttonColor={props.acceptButtonColor}
             setButtonColor={props.setAcceptButtonColor}
-            borderInitial="#FFFFFF"
             borderColor={props.acceptBorderColor}
             setBorderColor={props.setAcceptBorderColor}
           />
           <ButtonColorChanger
+            include={props.includeDecline}
+            setInclude={props.setIncludeDecline}
             title="Decline Button"
-            textInitial="#FFFFFF"
             textColor={props.declineTextColor}
             setTextColor={props.setDeclineTextColor}
-            buttonInitial="#8F2626"
             buttonColor={props.declineButtonColor}
             setButtonColor={props.setDeclineButtonColor}
-            borderInitial="#FFFFFF"
             borderColor={props.declineBorderColor}
             setBorderColor={props.setDeclineBorderColor}
           />
           <ButtonColorChanger
+            include={props.includeInfo}
+            setInclude={props.setIncludeInfo}
             title="Info Button"
-            textInitial="#3f359E"
             textColor={props.infoTextColor}
             setTextColor={props.setInfoTextColor}
-            buttonInitial="#FFFFFF"
             buttonColor={props.infoButtonColor}
             setButtonColor={props.setInfoButtonColor}
-            borderInitial="#FFFFFF"
             borderColor={props.infoBorderColor}
             setBorderColor={props.setInfoBorderColor}
           />

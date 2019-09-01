@@ -14,7 +14,8 @@
     "react-dom": "^16.8.6",
     "react-draggable": "^3.3.2",
     "react-input-color": "^2.0.24",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-textarea-autosize": "^7.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,13 @@
+@mixin sub-title {
+  font-size: 0.8em;
+  color: $text-color;
+  font-weight: 500;
+}
+@mixin input-box {
+  height: 1.5em;
+  border: 2px solid $gray;
+  background-color: white;
+  margin: 10px 0px;
+
+  padding: 0px 10px;
+}

@@ -4,9 +4,7 @@
   padding: 20px;
   .banner-color-component {
     .banner-color-title {
-      font-size: 0.8em;
-      color: $text-color;
-      font-weight: 500;
+      @include sub-title;
     }
 
     .shadow-options-wrapper {
@@ -97,13 +95,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  height: 1.5em;
-  border: 2px solid $gray;
-  background-color: white;
-  margin: 10px 0px;
-
-  padding: 0px 10px;
+  @include input-box;
 
   .color-input-field {
     color: $text-color;
@@ -112,6 +104,7 @@
       font-size: 1em;
       color: $text-color;
       outline: none;
+      width: 100%;
     }
   }
   &:hover {

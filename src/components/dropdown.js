@@ -4,10 +4,10 @@ import Layout from "./dropdown-components/layout";
 import BannerColors from "./dropdown-components/banner-colors";
 import ButtonStyle from "./dropdown-components/button-style";
 import Content from "./dropdown-components/content";
-import Behavior from "./dropdown-components/behavior";
+// import Behavior from "./dropdown-components/behavior";
 
 const Dropdown = props => {
-  const [activeComponent, changeActiveComponent] = React.useState("button");
+  const [activeComponent, changeActiveComponent] = React.useState("content");
 
   return (
     <div className="dropdown-components">
@@ -40,6 +40,9 @@ const Dropdown = props => {
         activeComponent={activeComponent}
         changeActiveComponent={changeActiveComponent}
         //button-style hooks pt 1
+        includeAccept={props.includeAccept}
+        includeDecline={props.includeDecline}
+        includeInfo={props.includeInfo}
         acceptTextColor={props.acceptTextColor}
         acceptButtonColor={props.acceptButtonColor}
         acceptBorderColor={props.acceptBorderColor}
@@ -50,6 +53,9 @@ const Dropdown = props => {
         infoButtonColor={props.infoButtonColor}
         infoBorderColor={props.infoBorderColor}
         //button-style hooks pt 2
+        setIncludeAccept={props.setIncludeAccept}
+        setIncludeDecline={props.setIncludeDecline}
+        setIncludeInfo={props.setIncludeInfo}
         setAcceptTextColor={props.setAcceptTextColor}
         setAcceptButtonColor={props.setAcceptButtonColor}
         setAcceptBorderColor={props.setAcceptBorderColor}
@@ -63,11 +69,21 @@ const Dropdown = props => {
       <Content
         activeComponent={activeComponent}
         changeActiveComponent={changeActiveComponent}
+        //content hooks pt 1
+        content={props.content}
+        acceptContent={props.acceptContent}
+        declineContent={props.declineContent}
+        infoContent={props.infoContent}
+        //content hooks pt 2
+        setContent={props.setContent}
+        setAcceptContent={props.setAcceptContent}
+        setDeclineContent={props.setDeclineContent}
+        setInfoContent={props.setInfoContent}
       />
-      <Behavior
+      {/* <Behavior
         activeComponent={activeComponent}
         changeActiveComponent={changeActiveComponent}
-      />
+      /> */}
     </div>
   );
 };

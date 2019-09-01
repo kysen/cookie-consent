@@ -3,8 +3,11 @@
   display: flex;
   flex-direction: column;
 
+  height: calc(100vh - 60);
   width: 20em;
   background-color: $lighter-gray;
+
+  z-index: 2;
   .dropdown-wrapper {
     align-items: center;
     height: fit-content;

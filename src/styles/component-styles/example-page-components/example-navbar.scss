@@ -1,4 +1,6 @@
 .example-navbar-container {
+  z-index: 1;
+
   .tab-bar-wrapper {
     display: flex;
     justify-content: space-between;

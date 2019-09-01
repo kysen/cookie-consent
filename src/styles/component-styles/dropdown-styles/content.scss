@@ -1,0 +1,24 @@
+.content-content {
+  padding: 20px;
+  .content-item-container {
+    .item-title {
+      @include sub-title;
+    }
+    .input-field-wrapper {
+      @include input-box;
+      display: flex;
+      flex-direction: row;
+      height: auto;
+
+      textarea {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-family: inherit;
+        font-size: 0.9em;
+        color: $text-color;
+        resize: none;
+      }
+    }
+  }
+}

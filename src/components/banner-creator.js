@@ -18,6 +18,10 @@ const BannerCreator = () => {
   const [shadowBlurChosen, setShadowBlur] = useState("medium");
   const [shadowSizeChosen, setShadowSize] = useState("match banner");
   // button-style hooks
+  const [includeAccept, setIncludeAccept] = useState(true);
+  const [includeDecline, setIncludeDecline] = useState(true);
+  const [includeInfo, setIncludeInfo] = useState(true);
+
   const [acceptTextColor, setAcceptTextColor] = useState({ hex: "#3f359E" });
   const [acceptButtonColor, setAcceptButtonColor] = useState({
     hex: "#FFFFFF"
@@ -37,6 +41,13 @@ const BannerCreator = () => {
   const [infoTextColor, setInfoTextColor] = useState({ hex: "#3f359E" });
   const [infoButtonColor, setInfoButtonColor] = useState({ hex: "#FFFFFF" });
   const [infoBorderColor, setInfoBorderColor] = useState({ hex: "#FFFFFF" });
+  // content hooks
+  const [content, setContent] = useState(
+    "Would you like to allow this site to use cookies?"
+  );
+  const [acceptContent, setAcceptContent] = useState("Yes");
+  const [declineContent, setDeclineContent] = useState("No");
+  const [infoContent, setInfoContent] = useState("Learn More");
 
   return (
     <div className="banner-creator-container">
@@ -61,6 +72,9 @@ const BannerCreator = () => {
           setShadowBlur={setShadowBlur}
           setShadowSize={setShadowSize}
           //button-style hooks pt 1
+          includeAccept={includeAccept}
+          includeDecline={includeDecline}
+          includeInfo={includeInfo}
           acceptTextColor={acceptTextColor}
           acceptButtonColor={acceptButtonColor}
           acceptBorderColor={acceptBorderColor}
@@ -71,6 +85,9 @@ const BannerCreator = () => {
           infoButtonColor={infoButtonColor}
           infoBorderColor={infoBorderColor}
           //button-style hooks pt 2
+          setIncludeAccept={setIncludeAccept}
+          setIncludeDecline={setIncludeDecline}
+          setIncludeInfo={setIncludeInfo}
           setAcceptTextColor={setAcceptTextColor}
           setAcceptButtonColor={setAcceptButtonColor}
           setAcceptBorderColor={setAcceptBorderColor}
@@ -80,6 +97,16 @@ const BannerCreator = () => {
           setInfoTextColor={setInfoTextColor}
           setInfoButtonColor={setInfoButtonColor}
           setInfoBorderColor={setInfoBorderColor}
+          //content hooks pt 1
+          content={content}
+          acceptContent={acceptContent}
+          declineContent={declineContent}
+          infoContent={infoContent}
+          //content hooks pt 2
+          setContent={setContent}
+          setAcceptContent={setAcceptContent}
+          setDeclineContent={setDeclineContent}
+          setInfoContent={setInfoContent}
         />
         <ExamplePage
           //layout hooks
@@ -92,6 +119,9 @@ const BannerCreator = () => {
           shadowBlurChosen={shadowBlurChosen}
           shadowSizeChosen={shadowSizeChosen}
           //button-style hooks
+          includeAccept={includeAccept}
+          includeDecline={includeDecline}
+          includeInfo={includeInfo}
           acceptTextColor={acceptTextColor.hex}
           acceptButtonColor={acceptButtonColor.hex}
           acceptBorderColor={acceptBorderColor.hex}
@@ -101,6 +131,11 @@ const BannerCreator = () => {
           infoTextColor={infoTextColor.hex}
           infoButtonColor={infoButtonColor.hex}
           infoBorderColor={infoBorderColor.hex}
+          //content hooks
+          content={content}
+          acceptContent={acceptContent}
+          declineContent={declineContent}
+          infoContent={infoContent}
         />
       </div>
     </div>
